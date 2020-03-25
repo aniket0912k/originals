@@ -61,17 +61,27 @@
          <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
          <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
        </svg>
-		</div><br>
-           
-        <h1 class="font-weight-bold">Welcome to 7 Waves</h1>
-        <p>If you think life is unfair, think again..</p>
+        </div><br>
+        <h1 >Welcome to 7 Waves</h1>
+        
+          
+          
+       
+
+
+        <p class="ml3">If you think life is unfair, think again..</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+          
         <div class="header-buttons">
             <a href="#parameters">Get Started today</a>
-            <!-- <a href="#blogs">Learn More</a>  -->
+            <a href="#parameters" >Learn More</a><br>
+            <div class="down">
+                <i class=" fa-2x fa fa-arrow-down"></i>
+            </div>
         </div>
   
     </div>
-
+    
 </section>
 </div>
 
@@ -80,9 +90,15 @@
 
 <section class="header-extradiv" id="parameters">
 <div class="container">
-    <h1 class="text-center font-weight-bold">
-        Our Parameters
-    </h1>
+    <h1 class="ml1">
+        <span class="text-wrapper">
+          <span class="line line1"></span>
+          <span class="letters">Parameters</span>
+          <span class="line line2"></span>
+        </span>
+      </h1>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <div class="row">
        
         <div class="extra-div col-lg-4 col-md-4 col-12">
@@ -142,13 +158,21 @@
     <!-- ###########################  -->
     <section class="blogs"id="blogs" >
         <div class="container headings text-center">
-            <h1 class="text-center font-weight-bold text-white">Our Blogs</h1>
+            <h1 class="ml11">
+                <span class="text-wrapper">
+                  <span class="line line1"></span>
+                  <span class="letters">Our Blogs</span>
+                </span>
+              </h1>
+              
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+              
         </div>
         <div class="container">
             <div class="row">
                 
                 <!-- blog start here  -->
-                <div class="col-lg-4 col-12 ">
+                <div class="col-lg-4 col-md-4 col-12 ">
                     <div class="card">
                         <img src="images/blog-01.jpg"   class="img-fluidi img-thumbnail"  style="width: 100%;height: 50%;">
                         <div class="space">
@@ -168,7 +192,7 @@
                 </div>
                 <!-- blog end here  -->
                  <!-- blog start here  -->
-                 <div class="col-lg-4 col-12 ">
+                 <div class="col-lg-4 col-md-4 col-12 ">
                     <div class="card"><img src="images/blog-01.jpg"   class="img-fluidi img-thumbnail"  style="width: 100%;height: 50%;"><div class="space">
                         <h2>Celebration of republic Day.</h2><br>
                              
@@ -181,7 +205,7 @@
                 </div>
                 <!-- blog end here  -->
                  <!-- blog start here  -->
-                 <div class="col-lg-4 col-12 ">
+                 <div class="col-lg-4 col-md-4 col-12 ">
                     <div class="card"><img src="images/blog-01.jpg"   class="img-fluidi img-thumbnail"  style="width: 100%;height: 50%;"><div class="space">
                        <h2>Celebration of republic Day.</h2><br>
                              
@@ -193,9 +217,6 @@
 
                 </div>
                 <!-- blog end here  -->
-                
-               
-
             </div>
         </div>
     </section>
@@ -287,8 +308,8 @@
                   </div>
                   <div class="carousel-item">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="box" style="width: 50%;">
                                 <a href=""><img src="images/gallery_img-06.jpg"   class="img-fluidi img-thumbnail" ></a>
                                 <h3>Effective lifestyle</h3>
                                 <p>BY 7WAVES</p>
@@ -472,12 +493,97 @@
      function topFunction(){
          document.body.scrollTop=0;
          document.documentElement.scrollTop=0;
-     }     
+     }  
+     </script>
+     <script>  
+     
+     // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 550,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 50,
+    easing: "easeOutExpo",
+    delay: 50
+  });
+
+  // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+  // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml11 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml11 .line',
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700
+  })
+  .add({
+    targets: '.ml11 .line',
+    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+    easing: "easeOutExpo",
+    duration: 700,
+    delay: 100
+  }).add({
+    targets: '.ml11 .letter',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=775',
+    delay: (el, i) => 34 * (i+1)
+  }).add({
+    targets: '.ml11',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
      </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  
     </body>
 </html>
