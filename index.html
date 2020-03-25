@@ -11,7 +11,7 @@
     </head>
     <body>
         <!-- header part Start -->
-<div class="header" id="topheader">
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
         <div class="container text-uppercase p-2">
         <a class="navbar-brand font-weight-bold text-white" href="#">7 WAVES</a>
@@ -34,10 +34,10 @@
                 <a class="nav-link"  href="#services">Services</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" data-toggle="modal" data-target="#modalLoginForm"  href="#">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">SignUp</a>
+                <a class="nav-link" data-toggle="modal" data-target="#modalRegisterForm" href="#">SignUp</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Logout</a>
@@ -47,15 +47,29 @@
         </div>
     </div>
       </nav>
+    
+      <div class="header" id="topheader">
 <section class="header-section">
     <div class="center-div">
+        
+        <div class="search-box">
+			<div class="search-icon" class="header-buttons"><i class="fa fa-search search-icon"></i></div>
+			<form action="" class="search-form">
+				<input type="text" placeholder="Search" id="search" autocomplete="off">
+			</form><svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+            xml:space="preserve">
+         <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+         <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+       </svg>
+		</div><br>
+           
         <h1 class="font-weight-bold">Welcome to 7 Waves</h1>
         <p>If you think life is unfair, think again..</p>
         <div class="header-buttons">
-            <a href="#parameters">Get Started</a>
-            <a href="#blogs">Learn More</a>   
+            <a href="#parameters">Get Started today</a>
+            <!-- <a href="#blogs">Learn More</a>  -->
         </div>
-
+  
     </div>
 
 </section>
@@ -377,6 +391,73 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa-2x fa fa-user prefix grey-text"></i>
+          <input type="text" id="orangeForm-name" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+        </div>
+        <div class="md-form mb-5">
+          <i class="fa-2x fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="orangeForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fa-2x fa fa-lock prefix grey-text"></i>
+          <input type="password" id="orangeForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <div class="footer"><a type="button" href="#">Read more</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa-2x fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fa-2x fa fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <div class="footer"><a type="button" href="#">Read more</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
      <!-- footer ends  -->
      <script>
      mybutton = document.getElementById("myBtn");
@@ -391,11 +472,8 @@
      function topFunction(){
          document.body.scrollTop=0;
          document.documentElement.scrollTop=0;
-     }
-
-     
+     }     
      </script>
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
